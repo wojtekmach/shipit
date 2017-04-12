@@ -15,7 +15,7 @@ defmodule Mix.Tasks.PublishPlus do
   - CHANGELOG.md is present and updated with the release
   - LICENSE.md is present
 
-  A `--dry-run` option might be given to not create and push tags or the package to Hex.
+  A `--dry-run` option might be given to only perform local checks.
   """
 
   @changelog "CHANGELOG.md"
@@ -37,7 +37,7 @@ defmodule Mix.Tasks.PublishPlus do
           create_and_push_tag(version)
         end
       _ ->
-        Mix.raise "Usage: mix publish_plus VERSION"
+        Mix.raise "Usage: mix publish_plus VERSION [--dry-run]"
     end
   end
 
