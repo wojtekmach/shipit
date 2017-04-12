@@ -9,6 +9,12 @@ It assumes the following:
 - CHANGELOG.md is present and updated with the release
 - LICENSE.md is present
 
+## Installation
+
+    $ curl -L -O https://github.com/wojtekmach/publish_plus/releases/download/v0.1.0/publish_plus-0.1.0.ez
+    $ mix archive.install publish_plus-0.1.0.ez
+    $ mix help publish_plus
+
 ## License
 
 PublishPlus is released under the MIT license, see [LICENSE.md](LICENSE.md).
