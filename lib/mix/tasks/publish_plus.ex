@@ -47,7 +47,7 @@ defmodule Mix.Tasks.PublishPlus do
     "v#{version}"
   end
 
-  def check_version(version, project_version) do
+  defp check_version(version, project_version) do
     if version != project_version do
       Mix.raise "Expected #{inspect version} to match mix.exs version #{inspect project_version}"
     end
