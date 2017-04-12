@@ -13,7 +13,7 @@ It assumes the following:
 
 On Elixir v1.4+:
 
-    $ mix archive.install wojtekmach/publish_plus
+    $ mix archive.install github wojtekmach/publish_plus
 
 On Elixir v1.3:
 
