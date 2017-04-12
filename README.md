@@ -11,6 +11,12 @@ It assumes the following:
 
 ## Installation
 
+On Elixir v1.4+:
+
+    $ mix archive.install wojtekmach/publish_plus
+
+On Elixir v1.3:
+
     $ curl -L -O https://github.com/wojtekmach/publish_plus/releases/download/v0.1.0/publish_plus-0.1.0.ez
     $ mix archive.install publish_plus-0.1.0.ez
     $ mix help publish_plus
