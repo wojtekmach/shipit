@@ -9,6 +9,14 @@ It assumes the following:
 - CHANGELOG.md is present and updated with the release
 - LICENSE.md is present
 
+## Usage
+
+    $ mix shipit master 1.0.0
+
+For more information, see:
+
+    $ mix help shipit
+
 ## Installation
 
 On Elixir v1.4+:

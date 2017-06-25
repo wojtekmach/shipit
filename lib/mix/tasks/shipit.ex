@@ -6,7 +6,7 @@ defmodule Mix.Tasks.Shipit do
   @moduledoc """
   ShipIt is an opinionated package publisher for Elixir.
 
-      mix shipit VERSION
+      mix shipit BRANCH VERSION
 
   It assumes the following:
 
@@ -25,10 +25,11 @@ defmodule Mix.Tasks.Shipit do
 
   def run(args) do
     case OptionParser.parse(args, strict: @switches) do
-      {opts, [version], []} ->
+      {opts, [branch, version], []} ->
         project = Mix.Project.config()
         version = normalize_version(project, version)
 
+        check_branch(branch)
         check_changelog(version)
         check_license()
 
@@ -37,8 +38,20 @@ defmodule Mix.Tasks.Shipit do
           create_and_push_tag(version)
         end
       _ ->
-        Mix.raise "Usage: mix shipit VERSION [--dry-run]"
+        Mix.raise "Usage: mix shipit BRANCH VERSION [--dry-run]"
     end
+  end
+
+  defp check_branch(branch) do
+    current_branch = current_branch()
+    if branch != current_branch do
+      Mix.raise "Expected branch #{inspect branch} does not match the current branch #{inspect current_branch}"
+    end
+  end
+
+  defp current_branch() do
+    {branch, 0} = System.cmd("git", ["rev-parse", "--abbrev-ref", "HEAD"])
+    String.trim(branch)
   end
 
   defp normalize_version(project, "v" <> rest), do: normalize_version(project, rest)
