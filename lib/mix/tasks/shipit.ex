@@ -29,6 +29,7 @@ defmodule Mix.Tasks.Shipit do
         project = Mix.Project.config()
         version = normalize_version(project, version)
 
+        check_working_tree()
         check_branch(branch)
         check_changelog(version)
         check_license()
@@ -39,6 +40,13 @@ defmodule Mix.Tasks.Shipit do
         end
       _ ->
         Mix.raise "Usage: mix shipit BRANCH VERSION [--dry-run]"
+    end
+  end
+
+  defp check_working_tree() do
+    {out, 0} = System.cmd("git", ["status", "--porcelain"])
+    if out != "" do
+      Mix.raise "Found uncommitted changes in the working tree"
     end
   end
 
