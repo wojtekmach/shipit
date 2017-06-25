@@ -35,9 +35,9 @@ defmodule Mix.Tasks.Shipit do
 
         check_working_tree()
         check_branch(branch)
-        check_remote_branch(branch)
         check_changelog(version)
         check_license()
+        check_remote_branch(branch)
 
         unless opts[:dry_run] do
           publish()
