@@ -38,7 +38,7 @@ defmodule ShipIt.Mixfile do
 
   def package do
     [
-      description: "ShipIt is an opinionated package publisher for Elixir",
+      description: "ShipIt automates Hex package publishing to avoid common mistakes",
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/wojtekmach/shipit"},
       maintainers: ["Wojtek Mach"],

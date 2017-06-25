@@ -1,19 +1,23 @@
 defmodule Mix.Tasks.Shipit do
   use Mix.Task
 
-  @shortdoc "Publishes a new package version"
+  @shortdoc "Publishes new Hex package version"
 
   @moduledoc """
-  ShipIt is an opinionated package publisher for Elixir.
+  ShipIt automates Hex package publishing to avoid common mistakes.
 
       mix shipit BRANCH VERSION
 
-  It assumes the following:
+  It automates these steps:
 
-  - as usual, packages are published to Hex.pm and docs to HexDocs.pm
-  - for each release, a tag is created and pushed to git
-  - CHANGELOG.md is present and updated with the release
-  - LICENSE.md is present
+  * ensure there are no uncommited changes in the working tree
+  * ensure current branch matches the given branch
+  * ensure local branch is in sync with remote branch
+  * ensure project version in mix.exs matches the given version
+  * ensure CHANGELOG.md contains an entry for the version
+  * ensure LICENSE.md file is present
+  * create a git tag and push it
+  * publish to Hex.pm and HexDocs.pm
 
   A `--dry-run` option might be given to only perform local checks.
   """
