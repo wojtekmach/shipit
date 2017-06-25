@@ -1,6 +1,6 @@
-# PublishPlus
+# ShipIt
 
-PublishPlus is an opinionated package publisher for Elixir.
+ShipIt is an opinionated package publisher for Elixir.
 
 It assumes the following:
 
@@ -13,14 +13,14 @@ It assumes the following:
 
 On Elixir v1.4+:
 
-    $ mix archive.install github wojtekmach/publish_plus
+    $ mix archive.install github wojtekmach/shipit
 
 On Elixir v1.3:
 
-    $ curl -L -O https://github.com/wojtekmach/publish_plus/releases/download/v0.1.0/publish_plus-0.1.0.ez
-    $ mix archive.install publish_plus-0.1.0.ez
-    $ mix help publish_plus
+    $ curl -L -O https://github.com/wojtekmach/shipit/releases/download/v0.1.0/shipit-0.1.0.ez
+    $ mix archive.install shipit-0.1.0.ez
+    $ mix help shipit
 
 ## License
 
-PublishPlus is released under the MIT license, see [LICENSE.md](LICENSE.md).
+ShipIt is released under the MIT license, see [LICENSE.md](LICENSE.md).

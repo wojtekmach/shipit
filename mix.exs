@@ -1,11 +1,11 @@
-defmodule PublishPlus.Mixfile do
+defmodule ShipIt.Mixfile do
   use Mix.Project
 
   @version "0.1.0"
 
   def project do
     [
-      app: :publish_plus,
+      app: :shipit,
       version: @version,
       elixir: "~> 1.3",
       build_embedded: Mix.env == :prod,
@@ -14,10 +14,10 @@ defmodule PublishPlus.Mixfile do
       package: package(),
 
       # Docs
-      name: "PublishPlus",
+      name: "ShipIt",
       docs: [
         source_ref: "v#{@version}",
-        source_url: "https://github.com/wojtekmach/publish_plus",
+        source_url: "https://github.com/wojtekmach/shipit",
         main: "readme",
         extras: ["README.md"]
       ]
@@ -38,9 +38,9 @@ defmodule PublishPlus.Mixfile do
 
   def package do
     [
-      description: "PublishPlus is an opinionated package publisher for Elixir",
+      description: "ShipIt is an opinionated package publisher for Elixir",
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/wojtekmach/publish_plus"},
+      links: %{"GitHub" => "https://github.com/wojtekmach/shipit"},
       maintainers: ["Wojtek Mach"],
     ]
   end

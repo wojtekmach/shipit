@@ -1,12 +1,12 @@
-defmodule Mix.Tasks.PublishPlus do
+defmodule Mix.Tasks.Shipit do
   use Mix.Task
 
   @shortdoc "Publishes a new package version"
 
   @moduledoc """
-  PublishPlus is an opinionated package publisher for Elixir.
+  ShipIt is an opinionated package publisher for Elixir.
 
-      mix publish_plus VERSION
+      mix shipit VERSION
 
   It assumes the following:
 
@@ -37,7 +37,7 @@ defmodule Mix.Tasks.PublishPlus do
           create_and_push_tag(version)
         end
       _ ->
-        Mix.raise "Usage: mix publish_plus VERSION [--dry-run]"
+        Mix.raise "Usage: mix shipit VERSION [--dry-run]"
     end
   end
 

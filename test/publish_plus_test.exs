@@ -1,4 +1,4 @@
-defmodule PublishPlusTest do
+defmodule ShipItTest do
   use ExUnit.Case
 
   test "the truth" do
