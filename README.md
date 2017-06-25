@@ -25,7 +25,7 @@ For more information, see:
 
 On Elixir v1.4+:
 
-    $ mix archive.install github wojtekmach/shipit
+    $ mix archive.install hex shipit
 
 On Elixir v1.3:
 
