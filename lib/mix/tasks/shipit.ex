@@ -66,7 +66,7 @@ defmodule Mix.Tasks.Shipit do
     {_, 0} = System.cmd("git", ["fetch"])
 
     case System.cmd("git", ["rev-parse", "--symbolic-full-name", "--abbrev-ref", "#{local_branch}@{upstream}"]) do
-      {out, 0} ->
+      {_out, 0} ->
         true
       {_, _} ->
         Mix.raise "Aborting due to git error"

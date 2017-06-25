@@ -29,8 +29,8 @@ On Elixir v1.4+:
 
 On Elixir v1.3:
 
-    $ curl -L -O https://github.com/wojtekmach/shipit/releases/download/v0.2.0/shipit-0.2.0.ez
-    $ mix archive.install shipit-0.2.0.ez
+    $ curl -L -O https://github.com/wojtekmach/shipit/releases/download/v0.2.0/shipit-0.2.1.ez
+    $ mix archive.install shipit-0.2.1.ez
 
 ## License
 
