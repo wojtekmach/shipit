@@ -31,6 +31,7 @@ defmodule Mix.Tasks.Shipit do
 
         check_working_tree()
         check_branch(branch)
+        check_remote_branch(branch)
         check_changelog(version)
         check_license()
 
@@ -54,6 +55,20 @@ defmodule Mix.Tasks.Shipit do
     current_branch = current_branch()
     if branch != current_branch do
       Mix.raise "Expected branch #{inspect branch} does not match the current branch #{inspect current_branch}"
+    end
+  end
+
+  defp check_remote_branch(local_branch) do
+    {_, 0} = System.cmd("git", ["fetch"])
+
+    {out, 0} = System.cmd("git", ["status", "--branch", local_branch, "--porcelain"])
+
+    if String.contains?(out, "ahead") do
+      Mix.raise "Local branch is ahead the remote branch, aborting"
+    end
+
+    if String.contains?(out, "behind") do
+      Mix.raise "Local branch is behind the remote branch, aborting"
     end
   end
 
