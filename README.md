@@ -2,7 +2,7 @@
 
 ShipIt automates Hex package publishing to avoid common mistakes.
 
-It assumes the following:
+It automates these steps:
 
 * ensure there are no uncommited changes in the working tree
 * ensure current branch matches the given branch
