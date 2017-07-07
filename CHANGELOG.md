@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.2 (2017-07-07)
+
+* Allow LICENSE.md and LICENSE
+
 ## v0.2.1 (2017-06-26)
 
 * Perform remote branch check later as it's slow
