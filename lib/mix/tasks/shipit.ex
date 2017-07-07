@@ -23,7 +23,7 @@ defmodule Mix.Tasks.Shipit do
   """
 
   @changelog "CHANGELOG.md"
-  @license "LICENSE.md"
+  @licenses ["LICENSE.md", "LICENSE"]
 
   @switches [dry_run: :boolean]
 
@@ -111,8 +111,8 @@ defmodule Mix.Tasks.Shipit do
   end
 
   defp check_license do
-    unless File.exists?(@license) do
-      Mix.raise "#{@license} is missing"
+    unless Enum.any?(@licenses,&File.exists?(&1)) do
+      Mix.raise "LICENSE file is missing, add LICENSE.md or LICENSE"
     end
   end
 
