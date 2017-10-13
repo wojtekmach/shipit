@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.3 (2017-10-13)
+
+* Add support for custom `.shipit.exs`
+
 ## v0.2.2 (2017-07-07)
 
 * Allow LICENSE.md and LICENSE
