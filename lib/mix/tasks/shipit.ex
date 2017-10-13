@@ -37,6 +37,7 @@ defmodule Mix.Tasks.Shipit do
         check_branch(branch)
         check_changelog(version)
         check_license()
+        check_dot_shipit(branch, version)
         check_remote_branch(branch)
 
         unless opts[:dry_run] do
@@ -113,6 +114,15 @@ defmodule Mix.Tasks.Shipit do
   defp check_license do
     unless Enum.any?(@licenses,&File.exists?(&1)) do
       Mix.raise "LICENSE file is missing, add LICENSE.md or LICENSE"
+    end
+  end
+
+  defp check_dot_shipit(branch, version) do
+    dot_shipit = ".shipit.exs"
+
+    if File.exists?(dot_shipit) do
+      binding = [branch: branch, version: version]
+      File.read!(dot_shipit) |> Code.eval_string(binding, file: dot_shipit)
     end
   end
 
