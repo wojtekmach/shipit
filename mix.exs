@@ -8,8 +8,8 @@ defmodule ShipIt.Mixfile do
       app: :shipit,
       version: @version,
       elixir: "~> 1.3",
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
 
@@ -41,7 +41,7 @@ defmodule ShipIt.Mixfile do
       description: "ShipIt automates Hex package publishing to avoid common mistakes",
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/wojtekmach/shipit"},
-      maintainers: ["Wojtek Mach"],
+      maintainers: ["Wojtek Mach"]
     ]
   end
 end
