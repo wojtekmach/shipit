@@ -85,7 +85,7 @@ defmodule Mix.Tasks.Shipit do
     {out, 0} = System.cmd("git", ["status", "--branch", local_branch, "--porcelain"])
 
     if String.contains?(out, "ahead") do
-      Mix.raise("Local branch is ahead the remote branch, aborting")
+      Mix.raise("Local branch is ahead of the remote branch, aborting")
     end
 
     if String.contains?(out, "behind") do
