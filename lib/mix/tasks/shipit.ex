@@ -61,7 +61,7 @@ defmodule Mix.Tasks.Shipit do
   defp check_branch(expected) do
     current = current_branch()
 
-    if branch != current_branch do
+    if expected != current do
       Mix.raise("Expected branch #{inspect(expected)} does not match current #{inspect(current)}")
     end
   end
